@@ -15,11 +15,13 @@ The dataset undergoes several preprocessing steps to ensure clean, balanced, and
 1. Sorting & Label Extraction
 
 i)The data is sorted by timestamp (start_ts) to maintain time-sequence order.
+
 ii)The target variable (depression_episode) is extracted for classification.
 
 2. Feature Selection & Cleaning
 
 i)Non-relevant columns (pid, timestamps, PHQ-9 scores) are dropped.
+
 ii)Non-numeric features (e.g., boundingBox) are removed.
 
 3. Missing Value Handling
