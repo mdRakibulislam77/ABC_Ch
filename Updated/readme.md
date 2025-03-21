@@ -52,7 +52,14 @@ Hybrid Model (LOPDO - Leave-One-Participant-Day-Out Cross-Validation)
 XGBoost, SVM, Random Forest for comparative analysis.
 Performance Metrics: Confusion Matrix, Precision, Recall, F1-score, ROC-AUC Curve.
 
-📊 **Model Performance**
+ **Model Performance**
 Hybrid Model (LOPDO) - Bidirectional LSTM
 Universal Model (LOPO) - Bidirectional LSTM
 Comparison with XGBoost, SVM, and Random Forest
+
+**Results & Visualizations**
+
+i)Confusion Matrix & Classification Reports
+
+ii)ROC-AUC Curves
+
