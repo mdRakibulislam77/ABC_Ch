@@ -12,29 +12,35 @@ This project implements deep learning (Bidirectional LSTM) and machine learning 
 **Data Preprocessing:**
 The dataset undergoes several preprocessing steps to ensure clean, balanced, and normalized input for the model:
 
-Sorting & Label Extraction
+1. Sorting & Label Extraction
 
-The data is sorted by timestamp (start_ts) to maintain time-sequence order.
-The target variable (depression_episode) is extracted for classification.
-Feature Selection & Cleaning
+i)The data is sorted by timestamp (start_ts) to maintain time-sequence order.
+ii)The target variable (depression_episode) is extracted for classification.
 
-Non-relevant columns (pid, timestamps, PHQ-9 scores) are dropped.
-Non-numeric features (e.g., boundingBox) are removed.
-Missing Value Handling
+2. Feature Selection & Cleaning
 
-Applied Mean Imputation using SimpleImputer to fill missing values.
-Feature Scaling
+i)Non-relevant columns (pid, timestamps, PHQ-9 scores) are dropped.
+ii)Non-numeric features (e.g., boundingBox) are removed.
 
-Used StandardScaler to normalize features for better model performance.
-Class Imbalance Handling
+3. Missing Value Handling
 
-SMOTE (Synthetic Minority Over-sampling Technique) is applied to balance the dataset.
-Reshaping for Deep Learning Models
+i)Applied Mean Imputation using SimpleImputer to fill missing values.
 
-Data is reshaped into 3D format (samples, timesteps, features) for LSTM models.
-Class Weights Calculation
+4.Feature Scaling
 
-Used compute_class_weight to adjust for imbalanced classes, improving model learning.
+i)Used StandardScaler to normalize features for better model performance.
+
+5.Class Imbalance Handling
+
+i)SMOTE (Synthetic Minority Over-sampling Technique) is applied to balance the dataset.
+
+5. Reshaping for Deep Learning Models
+
+i) Data is reshaped into 3D format (samples, timesteps, features) for LSTM models.
+
+6.Class Weights Calculation
+
+i)Used compute_class_weight to adjust for imbalanced classes, improving model learning.
 
 **Deep Learning Model - Bidirectional LSTM:**
 Universal Model (LOPO - Leave-One-Participant-Out Cross-Validation)
