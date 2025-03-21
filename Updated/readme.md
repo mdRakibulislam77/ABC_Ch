@@ -10,9 +10,31 @@ This project implements deep learning (Bidirectional LSTM) and machine learning 
 **Feature Engineering**: Extracted Action Units, Head Movements, Eye Open Probabilities, and Facial Landmarks from JSON data.
 
 **Data Preprocessing:**
-KNN Imputation for missing values.
-RobustScaler & PCA for feature scaling & dimensionality reduction.
-ADASYN oversampling for class balance.
+The dataset undergoes several preprocessing steps to ensure clean, balanced, and normalized input for the model:
+
+Sorting & Label Extraction
+
+The data is sorted by timestamp (start_ts) to maintain time-sequence order.
+The target variable (depression_episode) is extracted for classification.
+Feature Selection & Cleaning
+
+Non-relevant columns (pid, timestamps, PHQ-9 scores) are dropped.
+Non-numeric features (e.g., boundingBox) are removed.
+Missing Value Handling
+
+Applied Mean Imputation using SimpleImputer to fill missing values.
+Feature Scaling
+
+Used StandardScaler to normalize features for better model performance.
+Class Imbalance Handling
+
+SMOTE (Synthetic Minority Over-sampling Technique) is applied to balance the dataset.
+Reshaping for Deep Learning Models
+
+Data is reshaped into 3D format (samples, timesteps, features) for LSTM models.
+Class Weights Calculation
+
+Used compute_class_weight to adjust for imbalanced classes, improving model learning.
 
 **Deep Learning Model - Bidirectional LSTM:**
 Universal Model (LOPO - Leave-One-Participant-Out Cross-Validation)
